@@ -11,7 +11,7 @@ spring:
     username: root
     password: 619314981
 mybatis:
-  mapper-location: classpath:mapping/*.xml
+  mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.gavin.entity
 
 ---
