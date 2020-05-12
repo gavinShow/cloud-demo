@@ -1,6 +1,8 @@
 server:
   port: 8081
 spring:
+  profiles:
+    active: dev
   application:
     name: account
   datasource:
@@ -8,12 +10,26 @@ spring:
     url: jdbc:mysql://192.168.1.104:3306/easybuy?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
     password: 619314981
+mybatis:
+  mapper-location: classpath:mapping/*.xml
+  type-aliases-package: com.gavin.entity
+
+---
+spring:
+  profiles: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+---
+spring:
+  profiles: prod
 eureka:
   client:
     service-url:
       defaultZone: http://192.168.1.104:8761/eureka/
   instance:
     prefer-ip-address: true
-mybatis:
-  mapper-location: classpath:mapping/*.xml
-  type-aliases-package: com.gavin.entity
