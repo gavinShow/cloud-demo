@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: account
+  datasource:
+    name: easybuy
+    url: jdbc:mysql://192.168.1.104:3306/easybuy?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 619314981
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.104:8761/eureka/
+  instance:
+    prefer-ip-address: true
+mybatis:
+  mapper-location: classpath:mapping/*.xml
+  type-aliases-package: com.gavin.entity
