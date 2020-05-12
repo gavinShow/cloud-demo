@@ -18,7 +18,8 @@ spring:
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.gavin.entity
-
+  configuration:
+    log-impl: org.apache.ibatis.logging.jdk14.Jdk14LoggingImpl
 ---
 spring:
   profiles: dev
